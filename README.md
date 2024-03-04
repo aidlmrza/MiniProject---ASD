@@ -1,2 +1,2 @@
-# MiniProject1-ASD
-Mini Project 1 - ASD
+# MiniProject-ASD
+Mini Project - ASD
