@@ -182,6 +182,7 @@ class PenjualKasetPlaystation:
 admin = PenjualKasetPlaystation()
 
 while True:
+    try:
         print("1. Tambah Kaset")
         print("2. Lihat Daftar kaset")
         print("3. Ubah Data Kaset")
@@ -189,56 +190,62 @@ while True:
         print("0. Keluar")
         opsi = input("Masukkan pilihan: ")
         if opsi == "1":
-            print("1. Tambah di awal")
-            print("2. Tambah di akhir")
-            print("3. Tambah di antara")
-            pilih = input("Masukkan pilihan: ")
-            if pilih == "1":
-                judul = input("Masukkan Judul Game: ").strip()
-                harga = int(input("Masukkan Harga kaset: "))
-                stok = int(input("Masukkan Stok Kaset: "))
-                while True:
-                    release = input("Masukkan tanggal Release [format: DD/MM/YYYY]: ")
-                    if release.strip():
-                        try:
-                            datetime.strptime(release, "%d/%m/%Y")
-                            break
-                        except ValueError:
-                            print("> FORMAT TANGGAL TIDAK VALID")
-                tipe = input("Kaset PS berapa: ")
-                admin.tambahAwal(judul, harga, stok, release, tipe)
-                admin.lihatSemuaKaset()
-            elif pilih == "2":
-                judul = input("Masukkan Judul Game: ").strip()
-                harga = int(input("Masukkan Harga kaset: "))
-                stok = int(input("Masukkan Stok Kaset: "))
-                while True:
-                    release = input("Masukkan tanggal Release [format: DD/MM/YYYY]: ")
-                    if release.strip():
-                        try:
-                            datetime.strptime(release, "%d/%m/%Y")
-                            break
-                        except ValueError:
-                            print("> FORMAT TANGGAL TIDAK VALID")
-                tipe = input("Kaset PS berapa: ")
-                admin.tambahAkhir(judul, harga, stok, release, tipe)
-                admin.lihatSemuaKaset()
-            elif pilih == "3":
-                judul = input("Masukkan Judul Game: ").strip()
-                harga = int(input("Masukkan Harga kaset: "))
-                stok = int(input("Masukkan Stok Kaset: "))
-                while True:
-                    release = input("Masukkan tanggal Release [format: DD/MM/YYYY]: ")
-                    if release.strip():
-                        try:
-                            datetime.strptime(release, "%d/%m/%Y")
-                            break
-                        except ValueError:
-                            print("> FORMAT TANGGAL TIDAK VALID")
-                tipe = input("Kaset PS berapa: ")
-                pos = int(input("Masukkan diposisi: "))
-                admin.tambahDiantara(judul, harga, stok, release, tipe)
-                admin.lihatSemuaKaset()
+            while True:
+                print("1. Tambah di awal")
+                print("2. Tambah di akhir")
+                print("3. Tambah di antara")
+                print("0. Keluar")
+                pilih = input("Masukkan pilihan: ")
+                if pilih == "1":
+                    judul = input("Masukkan Judul Game: ").strip()
+                    harga = int(input("Masukkan Harga kaset: "))
+                    stok = int(input("Masukkan Stok Kaset: "))
+                    while True:
+                        release = input("Masukkan tanggal Release [format: DD/MM/YYYY]: ")
+                        if release.strip():
+                            try:
+                                datetime.strptime(release, "%d/%m/%Y")
+                                break
+                            except ValueError:
+                                print("> FORMAT TANGGAL TIDAK VALID")
+                    tipe = input("Kaset PS berapa: ")
+                    admin.tambahAwal(judul, harga, stok, release, tipe)
+                    admin.lihatSemuaKaset()
+                elif pilih == "2":
+                    judul = input("Masukkan Judul Game: ").strip()
+                    harga = int(input("Masukkan Harga kaset: "))
+                    stok = int(input("Masukkan Stok Kaset: "))
+                    while True:
+                        release = input("Masukkan tanggal Release [format: DD/MM/YYYY]: ")
+                        if release.strip():
+                            try:
+                                datetime.strptime(release, "%d/%m/%Y")
+                                break
+                            except ValueError:
+                                print("> FORMAT TANGGAL TIDAK VALID")
+                    tipe = input("Kaset PS berapa: ")
+                    admin.tambahAkhir(judul, harga, stok, release, tipe)
+                    admin.lihatSemuaKaset()
+                elif pilih == "3":
+                    judul = input("Masukkan Judul Game: ").strip()
+                    harga = int(input("Masukkan Harga kaset: "))
+                    stok = int(input("Masukkan Stok Kaset: "))
+                    while True:
+                        release = input("Masukkan tanggal Release [format: DD/MM/YYYY]: ")
+                        if release.strip():
+                            try:
+                                datetime.strptime(release, "%d/%m/%Y")
+                                break
+                            except ValueError:
+                                print("> FORMAT TANGGAL TIDAK VALID")
+                    tipe = input("Kaset PS berapa: ")
+                    pos = int(input("Masukkan diposisi: "))
+                    admin.tambahDiantara(judul, harga, stok, release, tipe)
+                    admin.lihatSemuaKaset()
+                elif pilih == "0":
+                    break
+                else:
+                    print("Invalid Value")
         elif opsi == "2":
             admin.lihatSemuaKaset()
         elif opsi == "3":
@@ -307,3 +314,5 @@ while True:
             break
         else:
             print("Invalid Value")
+    except:
+        print("Invalid Value")
