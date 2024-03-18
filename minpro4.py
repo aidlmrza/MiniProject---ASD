@@ -582,7 +582,7 @@ while True:
                     print("tidak ada")
         elif opsi == "6":
             print("1. Searching judul")
-            print("2. ")
+            print("2. Searching ID")
             pilih = input("Pilih metode searching: ")
             if pilih == "1":
                 judulKaset = input("Masukkan judul Kaset: ")
