@@ -415,12 +415,12 @@ class PenjualKasetPlaystation:
 
 admin = PenjualKasetPlaystation()
 
-admin.tambahAwal("AA", 500000, 10, "01/01/2024", "4") 
-admin.tambahAwal("Boom", 500000, 15, "03/01/2024", "4")
-admin.tambahAwal("Aidah", 500000, 15, "03/01/2024", "4")
-admin.tambahAwal("Auu", 500000, 15, "03/01/2024", "4")
-admin.tambahAwal("Cuk", 55000, 8, "02/01/2024", "4")
-admin.tambahAkhir("Dugong", 600000, 9, "04/04/2024", "4")
+admin.tambahAwal("Avatar", 600000, 10, "01/01/2024", "4") 
+admin.tambahAwal("Baldurs Gate 3", 750000, 15, "03/01/2024", "5")
+admin.tambahAwal("Mortal Kombat 1", 900000, 15, "03/01/2024", "4")
+admin.tambahAwal("Spider-Man Miles Morales", 660000, 15, "03/01/2024", "4")
+admin.tambahAwal("Final Fantasy XVI", 800000, 8, "02/01/2024", "5")
+admin.tambahAkhir("FC24", 600000, 9, "04/04/2024", "4")
 
 while True:
         print("1. Tambah Kaset")
